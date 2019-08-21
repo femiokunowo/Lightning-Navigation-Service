@@ -1,0 +1,20 @@
+<!--
+  child component containing the lightning:navigatgion
+-->
+
+<aura:component implements="lightning:isUrlAddressable">
+   
+    <aura:attribute name="navigationUrl" type="String" />
+    <!-- add handler event    -->
+    <aura:handler name="init" value="{!this}" action="{!c.getUrl}" />  
+    
+     <!-- navigation service    -->
+    <lightning:navigation aura:id="navigationService"/>
+
+    <P>The anchor link (added for testing) works fine and navigate to the external URL</P>
+    <a href="{!v.navigationUrl}" target="_blank" >{!v.navigationUrl}</a>
+    <br/>
+    <br/>
+    <p>The navigate button  does not navigate. Somehow, lightning component concatenate the link to the page URL. </p>
+    <lightning:button label="Navigate" onclick="{!c.navigationHandler}"/>
+</aura:component>	

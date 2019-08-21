@@ -1,0 +1,11 @@
+<!--
+  parent component that calls ChildCmp
+-->
+<aura:component implements="force:lightningQuickAction,force:hasRecordId,lightning:isUrlAddressable">
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />  
+   
+    <!--Reference the ChildCmp component -->
+    <c:ChildCmp aura:id="navigationServiceCmp"/>      
+
+</aura:component>	
